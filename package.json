@@ -1,0 +1,43 @@
+{
+  "name": "ms-wmproducts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -r esm -r module-alias/register index.js",
+    "start:local": "nodemon -r esm -r dotenv/config index.js dotenv_config_path=./.env.local",
+    "test": "jest --coverage --detectOpenHandles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:prebolledo/ms-wmproducts.git"
+  },
+  "author": "thebestdev",
+  "license": "ISC",
+  "homepage": "https://github.com/prebolledo/fe-wmproducts#README",
+  "jest": {
+    "testEnvironment": "node", 
+    "modulePaths": [
+      "src"
+    ],
+    "moduleNameMapper": {
+        "^@/(.*)$": "<rootDir>/$1"
+    },
+    "moduleFileExtensions": [
+      "js"
+    ]
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "@babel/preset-env": "^7.9.5",
+    "babel-jest": "^25.3.0",
+    "jest": "^25.3.0",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "@amacl/roboc-api": "^1.0.2",
+    "module-alias": "^2.2.1",
+    "mongodb": "^3.6.2",
+    "node-fetch": "^2.6.0"
+  }
+}
