@@ -1,0 +1,44 @@
+SonarQube plugins:
+  - Python Code Quality and Security 2.13.0.7236 (python)
+  - SonarCSS 1.2.0.1325 (cssfamily)
+  - JaCoCo 1.1.0.898 (jacoco)
+  - SonarGo 1.6.0.719 (go)
+  - SonarKotlin 1.5.0.315 (kotlin)
+  - Svn 1.10.0.1917 (scmsvn)
+  - SonarJS 6.2.1.12157 (javascript)
+  - SonarRuby 1.5.0.315 (ruby)
+  - SonarScala 1.5.0.315 (sonarscala)
+  - C# Code Quality and Security 8.9.0.19135 (csharp)
+  - Java Code Quality and Security 6.5.1.22586 (java)
+  - SonarHTML 3.2.0.2082 (web)
+  - Git 1.12.0.2034 (scmgit)
+  - SonarFlex 2.5.1.1831 (flex)
+  - SonarXML 2.0.1.2020 (xml)
+  - PHP Code Quality and Security 3.5.0.5655 (php)
+  - SonarTS 2.1.0.4359 (typescript)
+  - VB.NET Code Quality and Security 8.9.0.19135 (vbnet)
+Global server settings:
+  - sonar.core.id=116CBBAB-AXTiwHjUqLd-uvjWE2v4
+  - sonar.core.startTime=2020-10-01T03:01:31-0300
+Project server settings:
+Project scanner properties:
+  - sonar.dynamicAnalysis=reuseReports
+  - sonar.exclusions=node_modules/,Dockerfile,src/**/*.test.*,coverage/lcov.info,coverage/lcov-report/*
+  - sonar.host.url=http://localhost:9000
+  - sonar.javascript.lcov.reportPaths=coverage/lcov.info
+  - sonar.language=js
+  - sonar.log.level=DEBUG
+  - sonar.login=******
+  - sonar.profile=node
+  - sonar.projectBaseDir=/Users/prebolledo/Amaris/Develop/wmproducts/ms-wmproducts
+  - sonar.projectKey=ms-wmproducts
+  - sonar.projectName=MS WM PRODUCTS
+  - sonar.projectVersion=1.0.0
+  - sonar.scanner.app=ScannerCli
+  - sonar.scanner.appVersion=4.2.0.1873
+  - sonar.sourceEncoding=US-ASCII
+  - sonar.sources=src/
+  - sonar.test.inclusions=**/*test*
+  - sonar.tests=src
+  - sonar.verbose=true
+  - sonar.working.directory=/Users/prebolledo/Amaris/Develop/wmproducts/ms-wmproducts/.scannerwork
