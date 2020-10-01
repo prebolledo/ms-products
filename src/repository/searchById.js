@@ -1,15 +1,19 @@
-import client from './mongo.client';
+import mongoose, { connect } from './mongo.client';
+import ProductSchema from './schemas/product';
 
 const searchById = async (id)=>{
     try {
-        await client.connect();
-        const Products = client.db().collection('products');
-        const product = await Products.findOne({id: id});
+        await connect();        
+        const Product = mongoose.model('Product', ProductSchema, 'products');
+        const product = await Product.findOne({id: id});
+        if(product !== null){        
+            return product.toObject();
+        }
         return product;
     } catch (e) {
-        console.error(e);
+        console.error("[searchById] Error obteniendo producto ", e);
     } finally {
-        await client.close();
+        await mongoose.disconnect();
     }    
 };
 

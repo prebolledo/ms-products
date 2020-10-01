@@ -6,7 +6,7 @@ const getProducts = async (search) => {
     let product = null;    
     if(search !== undefined){
         if(isId(search)){
-            product = await ProductsRepository.searchById(parseInt(search));
+            product = await ProductsRepository.searchById(parseInt(search));         
             if( product !== null ){
                 products.push(product); 
             }
@@ -44,6 +44,7 @@ export default async (req, res, next) => {
         });
 
     }catch(error){
+        console.log(error);
         res.status(500).json({
             OK: false,
             data: null,

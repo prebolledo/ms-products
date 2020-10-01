@@ -1,21 +1,24 @@
-import client from './mongo.client';
+import mongoose, { connect } from './mongo.client';
+import products from './products';
+import ProductSchema from './schemas/product';
 
 const searchByDescriptionOrBrand = async (search)=>{
+    let products = [];
     try {
-        await client.connect();
-        const Products = client.db().collection('products');
-        const products = await Products.find({
+        await connect();
+        const Product = mongoose.model('Product', ProductSchema, 'products');
+        products = await Product.find({
             $or:[
-                {brand:{$regex: '.*'+search+'.*', '$options':'i'}},
-                {description:{$regex: '.*'+search+'.*', '$options':'i'}},
+                {brand:{$regex: `.*${search}.*`, '$options':'i'}},
+                {description:{$regex: `.*${search}.*`, '$options':'i'}},
             ]
-        });
-        return products.toArray();
+        }).lean();
     } catch (e) {
-        console.error(e);
+        console.error("[searchByDescriptionOrBrand] Error obteniendo productos ", e);
     } finally {
-        await client.close();
+        await mongoose.disconnect();
     }   
+    return products;
 };
 
 export default searchByDescriptionOrBrand;
