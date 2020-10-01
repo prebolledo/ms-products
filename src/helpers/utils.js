@@ -3,7 +3,7 @@ export const isPalindromo = (text) => {
 };
 
 export const minCharactersSearch = (text)  => {
-    return text.length == 3; 
+    return text.length >= 3; 
 };
 
 export const isId = (text)  => {

@@ -7,10 +7,12 @@ const searchByDescriptionOrBrand = async (search)=>{
     try {
         await connect();
         const Product = mongoose.model('Product', ProductSchema, 'products');
+        const pattern = `.*${search}.*`;
+        console.log(pattern);
         products = await Product.find({
             $or:[
-                {brand:{$regex: `.*${search}.*`, '$options':'i'}},
-                {description:{$regex: `.*${search}.*`, '$options':'i'}},
+                {brand:{$regex: pattern, $options:'i'}},
+                {description:{$regex: pattern, $options:'i'}},
             ]
         }).lean();
     } catch (e) {
