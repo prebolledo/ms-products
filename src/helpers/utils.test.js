@@ -12,7 +12,7 @@ test('is not palindromo', () => {
 
 test('min characters search', () => {
     const text= 'ab';
-    expect(minCharactersSearch(text)).toBe(true);
+    expect(!minCharactersSearch(text)).toBe(true);
 });
 
 test('is id', () => {
