@@ -14,7 +14,7 @@
   },
   "author": "thebestdev",
   "license": "ISC",
-  "homepage": "https://github.com/prebolledo/fe-wmproducts#README",
+  "homepage": "https://github.com/prebolledo/ms-wmproducts#README",
   "jest": {  
     "testEnvironment": "node",
     "modulePaths": [
